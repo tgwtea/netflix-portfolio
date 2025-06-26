@@ -1,9 +1,16 @@
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProfileSelect from "./components/ProfileSelect";
+import About from "./pages/About";
+import Code from "./pages/Code";
+import Blog from "./pages/Blog";
+
+export default function App() {
   return (
-    <div className="bg-black text-white min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">Tailwind is working ✅</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<ProfileSelect />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/code" element={<Code />} />
+      <Route path="/blog" element={<Blog />} />
+    </Routes>
   );
 }
-
-export default App;
